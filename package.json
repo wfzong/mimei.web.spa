@@ -6,7 +6,6 @@
   "scripts": {
     "build": "cross-env NODE_ENV='production' webpack --progress --config ./build/webpack.prod.js",
     "dev": "webpack-dev-server --open --config ./build/webpack.dev.js",
-    "build-temp": "webpack --progress --config ./build/webpack.temp.js",
     "watch": "webpack --progress --watch",
     "start": "webpack-dev-server --open",
     "generatea": "webpack --env=dev --progress --profile --colors",
@@ -64,7 +63,6 @@
   },
   "dependencies": {
     "babel-loader": "^7.1.1",
-    "lodash": "^4.17.11",
     "vue-cookies": "^1.5.4",
     "vue-quill-editor": "^2.3.2"
   }

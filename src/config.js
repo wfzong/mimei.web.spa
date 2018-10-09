@@ -1,4 +1,5 @@
-const host = (process.env.NODE_ENV === 'production')?'https://api.mimei.net.cn':'http://api.limpid.local'
+// const host = (process.env.NODE_ENV === 'production')?'https://api.mimei.net.cn':'http://api.limpid.local'
+const host = (process.env.NODE_ENV === 'production')?'https://api.mimei.net.cn':'https://api.mimei.net.cn'
 
 
 export const loginApi = host + "/api/v1/tokens/"

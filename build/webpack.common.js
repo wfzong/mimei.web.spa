@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -44,9 +43,6 @@ module.exports = {
 	//devtool:'inline-source-map',//会一直生成map
 	devtool: '#cheap-module-source-map',//当 NODE_ENV=production 时，只会map文件框架~
 	plugins: [
-		new HtmlWebpackPlugin({
-			template: 'src/index.html'
-		}),
 		// 主要是为了把robots.txt 拷到根目录下
 	    new CopyWebpackPlugin([
 	      {
