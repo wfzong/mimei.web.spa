@@ -2,13 +2,13 @@ const webpack = require('webpack');
 const Merge = require('webpack-merge');
 const CommonConfig = require('./webpack.common.js');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const config = require('./config.js')
 
 
-const cssExtract = new ExtractTextPlugin('css/[name].[chunkhash].css');
+// const cssExtract = new ExtractTextPlugin('css/[name].[chunkhash].css');
 //const scssExtract = new ExtractTextPlugin("css/[name]_scss.[chunkhash].css")
 
 const webpackConfig = Merge(CommonConfig, {
@@ -21,25 +21,28 @@ const webpackConfig = Merge(CommonConfig, {
     rules: [
       {
         test: /\.css$/,
-        use: cssExtract.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
+        use:['style-loader', 'css-loader']
+        // use: cssExtract.extract({
+        //   fallback: 'style-loader',
+        //   use: 'css-loader'
+        // })
       },
       {
         test: /\.scss$/,
-        use: cssExtract.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
+        use:['style-loader', 'css-loader', 'sass-loader']
+        // use: cssExtract.extract({
+        //   fallback: 'style-loader',
+        //   use: ['css-loader', 'sass-loader']
+        // })
       }
     ]
   },
   plugins: [
-    cssExtract,
+    // cssExtract,
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      loading: config.loading
+      loading: config.loading,
+      inject: true
     }),
     //scssExtract,
     new CleanWebpackPlugin(path.join(__dirname, '../dist/'), {
