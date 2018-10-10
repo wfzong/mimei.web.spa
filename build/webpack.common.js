@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const path = require("path");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+
 
 module.exports = {
 	entry: {
@@ -54,6 +56,12 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'
-		})
+    }),
+    new PrerenderSPAPlugin({
+      // Required - The path to the webpack-outputted app to prerender.
+      staticDir: path.join(__dirname, '../dist'),
+      // Required - Routes to render.
+      routes: [ '/', '/about' ]
+    })
 	]
 }
