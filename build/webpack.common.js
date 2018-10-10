@@ -59,35 +59,37 @@ module.exports = {
     }),
 
 
-    new PrerenderSPAPlugin({
-      // Required - The path to the webpack-outputted app to prerender.
-      staticDir: path.join(__dirname, '../dist'),
-      // Required - Routes to render.
-      routes: [ '/'],
-      renderer: new Renderer({
-        renderAfterDocumentEvent: 'render-event'
-      })
-    })
-
-
-    // == PRERENDER SPA PLUGIN == //
     // new PrerenderSPAPlugin({
-    //   // Index.html is in the root directory.
-    //   staticDir: path.join(__dirname, '../dist/'),
-    //   routes: [ '/' ],
-    //   // Optional minification.
-    //   minify: {
-    //     collapseBooleanAttributes: true,
-    //     collapseWhitespace: true,
-    //     decodeEntities: true,
-    //     keepClosingSlash: true,
-    //     sortAttributes: true
-    //   },
-
+    //   // Required - The path to the webpack-outputted app to prerender.
+    //   staticDir: path.join(__dirname, '../dist'),
+    //   // Required - Routes to render.
+    //   routes: [ '/'],
     //   renderer: new Renderer({
+    //     headless:true,
     //     renderAfterDocumentEvent: 'render-event'
     //   })
     // })
+
+
+    // == PRERENDER SPA PLUGIN == //
+    new PrerenderSPAPlugin({
+      // Index.html is in the root directory.
+      staticDir: path.join(__dirname, '../dist/'),
+      routes: [ '/' ],
+      // Optional minification.
+      minify: {
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        decodeEntities: true,
+        keepClosingSlash: true,
+        sortAttributes: true
+      },
+
+      renderer: new Renderer({
+        headless:true,
+        renderAfterDocumentEvent: 'render-event'
+      })
+    })
 
 
   ]

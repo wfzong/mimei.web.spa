@@ -22,7 +22,8 @@ new Vue({
   render: h => h(Layout),
   mounted: function() {
     store.commit('initToken');
-    document.dispatchEvent(new Event('render-event'));
+    // document.dispatchEvent(new Event('render-event'));
+    setTimeout(() => { document.dispatchEvent(new Event('render-event')); }, 5000);
   },
   destroyed: () => {}
 });
