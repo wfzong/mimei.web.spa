@@ -84,9 +84,9 @@ module.exports = {
         keepClosingSlash: true,
         sortAttributes: true
       },
-
       renderer: new Renderer({
         headless:true,
+        // renderAfterTime: 5000,
         renderAfterDocumentEvent: 'render-event'
       })
     })

@@ -24,6 +24,9 @@ new Vue({
     store.commit('initToken');
     // document.dispatchEvent(new Event('render-event'));
     setTimeout(() => { document.dispatchEvent(new Event('render-event')); }, 5000);
+    // this.$nextTick(()=>{
+    //   document.dispatchEvent(new Event('render-event'));
+    // })
   },
   destroyed: () => {}
 });
