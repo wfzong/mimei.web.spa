@@ -1,4 +1,4 @@
+dist
 .sass-cache
 node_modules
 *.map
-./dist
