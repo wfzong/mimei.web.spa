@@ -1,7 +1,7 @@
 <template>
 <footer class="footer">
 	<div class="wapper">
-		<a href="/" class="logo"><img src="../images/elements/logo.png"></a>
+		<a href="/" class="logo"><img src="~@/images/elements/logo.png"></a>
 		<ul>
 			<li><router-link :to="{path:'/privacy'}">隐私策略</router-link></li>
 			<li><router-link :to="{path:'/copyright'}">使用条款</router-link></li>

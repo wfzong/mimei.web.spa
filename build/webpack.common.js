@@ -4,6 +4,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
   entry: {
     app: path.join(__dirname, '../src/index.js')
@@ -17,14 +21,16 @@ module.exports = {
     extensions: ['.js', '.vue', '.json', '.css', '.scss'],
     modules: [path.join(__dirname, '../src'), 'node_modules'],
     alias: {
-      vue: 'vue/dist/vue.esm.js'
+      vue: 'vue/dist/vue.esm.js',
+      '@': resolve('src')
     }
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader' //需安装 babel-plugin-syntax-dynamic-import 插件用于支持 ()=>import('xxx')
+        loader: 'babel-loader', //需安装 babel-plugin-syntax-dynamic-import 插件用于支持 ()=>import('xxx')
+        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
         test: /\.vue$/,

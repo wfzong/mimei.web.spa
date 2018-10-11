@@ -7,7 +7,7 @@
               <div class="info">
                   <div v-if="!!(JSON.parse(item.imgShow)).imgHash" class="img-show">
                       <router-link :to="{path:'item/'+item.id}">
-                      <img :src="baseUrl+(JSON.parse(item.imgShow)).imgHash+'?imageView2/1/w/500/h/500'" />
+                      <img v-lazy="baseUrl+(JSON.parse(item.imgShow)).imgHash+'?imageView2/1/w/500/h/500'" />
                       </router-link>
                   </div>
                   <div class="details">

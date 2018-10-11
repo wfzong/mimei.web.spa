@@ -18,7 +18,7 @@
     <section class="article-photos">
       <div class="list" v-for="(imgItem,index) in JSON.parse(info.imgContent)" :key="index">
        
-        <img :src="outUri(imgItem.imgHash)" :alt="imgItem.title">
+        <img v-lazy="outUri(imgItem.imgHash)" :alt="imgItem.title">
         <span v-if="imgItem.title">{{imgItem.title}}</span>
       </div>
     </section>
