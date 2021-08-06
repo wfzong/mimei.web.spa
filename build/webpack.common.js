@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const PrerenderSPAPlugin = require('prerender-spa-plugin');
-const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
+// const PrerenderSPAPlugin = require('prerender-spa-plugin');
+// const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -78,24 +78,24 @@ module.exports = {
 
 
     // == PRERENDER SPA PLUGIN == //
-    new PrerenderSPAPlugin({
-      // Index.html is in the root directory.
-      staticDir: path.join(__dirname, '../dist/'),
-      routes: [ '/' ],
-      // Optional minification.
-      minify: {
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        decodeEntities: true,
-        keepClosingSlash: true,
-        sortAttributes: true
-      },
-      renderer: new Renderer({
-        headless:true,
-        // renderAfterTime: 5000,
-        renderAfterDocumentEvent: 'render-event'
-      })
-    })
+    // new PrerenderSPAPlugin({
+    //   // Index.html is in the root directory.
+    //   staticDir: path.join(__dirname, '../dist/'),
+    //   routes: [ '/' ],
+    //   // Optional minification.
+    //   minify: {
+    //     collapseBooleanAttributes: true,
+    //     collapseWhitespace: true,
+    //     decodeEntities: true,
+    //     keepClosingSlash: true,
+    //     sortAttributes: true
+    //   },
+    //   renderer: new Renderer({
+    //     headless:true,
+    //     // renderAfterTime: 5000,
+    //     renderAfterDocumentEvent: 'render-event'
+    //   })
+    // })
 
 
   ]
