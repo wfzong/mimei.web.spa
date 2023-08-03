@@ -6,7 +6,7 @@
 			<li><router-link :to="{path:'/privacy'}">隐私策略</router-link></li>
 			<li><router-link :to="{path:'/copyright'}">使用条款</router-link></li>
 			<li><router-link :to="{path:'/contact'}">联系我们</router-link></li>
-			<li>&copy; 流水清清 2017</li>
+			<li>&copy; 流水清清 2023</li>
 		</ul>
 	</div>
 </footer>
