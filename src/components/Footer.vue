@@ -7,6 +7,7 @@
 			<li><router-link :to="{path:'/copyright'}">使用条款</router-link></li>
 			<li><router-link :to="{path:'/contact'}">联系我们</router-link></li>
 			<li>&copy; 流水清清 2023</li>
+			<li>国内ICP许可资质：<a href="https://beian.miit.gov.cn/#/Integrated/index" title="京ICP备16056341号-2">京ICP备16056341号-2</a></li>
 		</ul>
 	</div>
 </footer>
